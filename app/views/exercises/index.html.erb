@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Exercises</h1>
+
+<table id="exercises" class="table table-striped table-bordered table-hover">
+<thead>
+    <tr>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody class="text-center align-middle">
+    <% @exercises.each do |exercise| %>
+      <tr id="<%= dom_id exercise %>">
+        <td><%= exercise.name %></td>
+        <td><%= link_to "Show", exercise, class:"btn btn-outline-secondary" %></td>
+        <td><%= link_to "Edit", edit_exercise_path(exercise), class:"btn btn-outline-secondary" %></td>
+        <td><%= button_to "Destroy", @exercise, method: :delete, class:"btn btn-outline-secondary"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New exercise", new_exercise_path, class:"btn btn-primary"%>
