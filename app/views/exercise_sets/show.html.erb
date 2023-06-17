@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @exercise_set %>
+
+<div>
+  <%= link_to "Edit this exercise set", edit_exercise_set_path(@exercise_set) %> |
+  <%= link_to "Back to exercise sets", exercise_sets_path %>
+
+  <%= button_to "Destroy this exercise set", @exercise_set, method: :delete %>
+</div>

@@ -1,0 +1,42 @@
+<%= form_with(model: exercise_set) do |form| %>
+  <% if exercise_set.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(exercise_set.errors.count, "error") %> prohibited this exercise_set from being saved:</h2>
+
+      <ul>
+        <% exercise_set.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :exercise_id, style: "display: block" %>
+    <%= form.text_field :exercise_id %>
+  </div>
+
+  <div>
+    <%= form.label :workout_id, style: "display: block" %>
+    <%= form.text_field :workout_id %>
+  </div>
+
+  <div>
+    <%= form.label :sets, style: "display: block" %>
+    <%= form.number_field :sets %>
+  </div>
+
+  <div>
+    <%= form.label :reps, style: "display: block" %>
+    <%= form.number_field :reps %>
+  </div>
+
+  <div>
+    <%= form.label :weight, style: "display: block" %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
