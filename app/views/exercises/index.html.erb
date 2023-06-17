@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1>Exercises</h1>
 
-<h1>Exercises</h1>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= exercise.name %></td>
+        <td>
+          <%= link_to 'Show', exercise, class: 'btn btn-info btn-sm' %>
+          <%= link_to 'Delete', exercise, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<div id="exercises">
-  <% @exercises.each do |exercise| %>
-    <%= render exercise %>
-    <p>
-      <%= link_to "Show this exercise", exercise %>
-    </p>
-  <% end %>
+  <%= link_to 'New Exercise', new_exercise_path, class: 'btn btn-success' %>
+
 </div>
-
-<%= link_to "New exercise", new_exercise_path %>

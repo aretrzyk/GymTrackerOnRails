@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="DB Init" />
+    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="DB Init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/exercises/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/exercises/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +235,7 @@
       <workItem from="1687018191976" duration="87000" />
       <workItem from="1687018300788" duration="448000" />
       <workItem from="1687018780950" duration="33000" />
-      <workItem from="1687018841765" duration="2694000" />
+      <workItem from="1687018841765" duration="4018000" />
     </task>
     <task id="LOCAL-00001" summary="Ruby version update">
       <created>1687019613132</created>
@@ -254,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687021298750</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DB Init">
+      <created>1687021684696</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687021684696</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
