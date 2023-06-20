@@ -21,50 +21,31 @@ class ExerciseSetsController < ApplicationController
 
   # POST /exercise_sets or /exercise_sets.json
   def create
-    @exercise_set = ExerciseSet.new(exercise_set_params)
+    @workout = Workout.find(params[:workout_id])
+    @exercise_set = @workout.exercise_set.build(exercise_set_params)
 
-    respond_to do |format|
-      if @exercise_set.save
-        format.html { redirect_to exercise_set_url(@exercise_set), notice: "Exercise set was successfully created." }
-        format.json { render :show, status: :created, location: @exercise_set }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @exercise_set.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /exercise_sets/1 or /exercise_sets/1.json
-  def update
-    respond_to do |format|
-      if @exercise_set.update(exercise_set_params)
-        format.html { redirect_to exercise_set_url(@exercise_set), notice: "Exercise set was successfully updated." }
-        format.json { render :show, status: :ok, location: @exercise_set }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @exercise_set.errors, status: :unprocessable_entity }
-      end
+    if @exercise_set.save
+      redirect_to @workout, notice: 'Exercise Set was successfully created.'
+    else
+      render :new
     end
   end
 
   # DELETE /exercise_sets/1 or /exercise_sets/1.json
   def destroy
+    @workout = Workout.find(params[:workout_id])
     @exercise_set.destroy
-
-    respond_to do |format|
-      format.html { redirect_to exercise_sets_url, notice: "Exercise set was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to @workout, notice: 'Exercise Set was successfully deleted.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_exercise_set
-      @exercise_set = ExerciseSet.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_exercise_set
+    @exercise_set = ExerciseSet.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def exercise_set_params
-      params.require(:exercise_set).permit(:exercise_id, :workout_id, :sets, :reps, :weight)
-    end
+  # Only allow a list of trusted parameters through.
+  def exercise_set_params
+    params.require(:exercise_set).permit(:exercise_id, :workout_id, :sets, :reps, :weight)
+  end
 end

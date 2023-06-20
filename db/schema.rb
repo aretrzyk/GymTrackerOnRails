@@ -14,7 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_170711) do
   create_table "exercise_sets", force: :cascade do |t|
     t.integer "exercise_id", null: false
     t.integer "workout_id", null: false
-    t.integer "sets"
     t.integer "reps"
     t.float "weight"
     t.datetime "created_at", null: false

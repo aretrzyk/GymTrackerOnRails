@@ -1,8 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @exercise %>
-
 <div>
+  <%= render @exercise %>
+
+  <% if @exercise_sets != nil %>
+  <%= line_chart @reps, label: "Average Reps", title: "Average Reps"%>
+  <%= line_chart @weight, label: "Average Weight", title: "Average Weight" %>
+  <%= line_chart @avg_volume, label: "Average Volume", title: "Average Volume" %>
+  <%= line_chart @total_volume, label: "Total Volume", title: "Total Volume" %>
+  <% end %>
+
   <%= link_to "Edit this exercise", edit_exercise_path(@exercise) %> |
   <%= link_to "Back to exercises", exercises_path %>
 

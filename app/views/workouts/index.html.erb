@@ -1,14 +1,34 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1>Workouts</h1>
+  <%= link_to "New workout", new_workout_path, class: 'btn btn-success'%>
+  <br><br>
 
-<h1>Workouts</h1>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
 
-<div id="workouts">
-  <% @workouts.each do |workout| %>
-    <%= render workout %>
-    <p>
-      <%= link_to "Show this workout", workout %>
-    </p>
-  <% end %>
+    <tbody>
+    <% @workouts.each do |workout| %>
+      <tr>
+        <td class="align-middle"><%= workout.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td>
+          <div class="btn-group">
+            <div class="btn" >
+              <%= link_to 'Show', workout, class: 'btn btn-info btn-sm' %>
+            </div>
+            <div class="btn">
+              <%= button_to 'Delete', workout, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            </div>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 </div>
 
-<%= link_to "New workout", new_workout_path %>

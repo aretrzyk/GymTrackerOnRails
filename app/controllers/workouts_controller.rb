@@ -8,24 +8,26 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/1 or /workouts/1.json
   def show
+    @exercise_sets = ExerciseSet.where(workout_id: @workout.id)
   end
 
   # GET /workouts/new
   def new
     @workout = Workout.new
+    @workout.save
+    redirect_to workouts_path
   end
 
   # GET /workouts/1/edit
   def edit
   end
 
-  # POST /workouts or /workouts.json
   def create
-    @workout = Workout.new(workout_params)
+    @workout = Workout.new(exercise_params)
 
     respond_to do |format|
       if @workout.save
-        format.html { redirect_to workout_url(@workout), notice: "Workout was successfully created." }
+        format.html { redirect_to workouts_url, notice: "Workout was successfully created." }
         format.json { render :show, status: :created, location: @workout }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,6 +35,7 @@ class WorkoutsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /workouts/1 or /workouts/1.json
   def update
@@ -58,13 +61,13 @@ class WorkoutsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_workout
-      @workout = Workout.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_workout
+    @workout = Workout.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def workout_params
-      params.fetch(:workout, {})
-    end
+  # Only allow a list of trusted parameters through.
+  def workout_params
+    params.fetch(:workout, {})
+  end
 end
