@@ -1,19 +1,21 @@
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: %i[ show edit update destroy ]
+  before_action :require_login
 
   # GET /workouts or /workouts.json
   def index
-    @workouts = Workout.all
+    @workouts = Workout.where(user_id: current_user.id)
   end
 
   # GET /workouts/1 or /workouts/1.json
   def show
+    @workout = Workout.find(params[:id])
     @exercise_sets = ExerciseSet.where(workout_id: @workout.id)
   end
 
   # GET /workouts/new
   def new
-    @workout = Workout.new
+    @user = User.find(current_user.id)
+    @workout = Workout.new(workout_params)
     @workout.save
     redirect_to workouts_path
   end
@@ -23,7 +25,7 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(exercise_params)
+    @workout = Workout.new(workout_params)
 
     respond_to do |format|
       if @workout.save
@@ -68,6 +70,7 @@ class WorkoutsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def workout_params
-    params.fetch(:workout, {})
+    params.require(:workout).permit(:user_id)
   end
+
 end

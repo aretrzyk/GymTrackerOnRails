@@ -1433,256 +1433,248 @@
     <table id="509" parent="173" name="sqlite_sequence">
       <System>1</System>
     </table>
-    <table id="510" parent="173" name="user_workouts"/>
-    <table id="511" parent="173" name="users"/>
-    <table id="512" parent="173" name="workouts"/>
-    <column id="513" parent="504" name="key">
+    <table id="510" parent="173" name="users"/>
+    <table id="511" parent="173" name="workouts"/>
+    <column id="512" parent="504" name="key">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="514" parent="504" name="value">
+    <column id="513" parent="504" name="value">
       <DasType>varchar|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="515" parent="504" name="created_at">
+    <column id="514" parent="504" name="created_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="516" parent="504" name="updated_at">
+    <column id="515" parent="504" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="517" parent="504" name="sqlite_autoindex_ar_internal_metadata_1">
+    <index id="516" parent="504" name="sqlite_autoindex_ar_internal_metadata_1">
       <ColNames>key</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="518" parent="504">
+    <key id="517" parent="504">
       <ColNames>key</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_ar_internal_metadata_1</UnderlyingIndexName>
     </key>
-    <column id="519" parent="505" name="id">
+    <column id="518" parent="505" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="520" parent="505" name="exercise_id">
+    <column id="519" parent="505" name="exercise_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="521" parent="505" name="workout_id">
+    <column id="520" parent="505" name="workout_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="522" parent="505" name="sets">
+    <column id="521" parent="505" name="reps">
       <DasType>integer|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="523" parent="505" name="reps">
-      <DasType>integer|0s</DasType>
+    <column id="522" parent="505" name="weight">
+      <DasType>float|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="524" parent="505" name="weight">
-      <DasType>float|0s</DasType>
+    <column id="523" parent="505" name="created_at">
+      <DasType>datetime(6)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="525" parent="505" name="created_at">
+    <column id="524" parent="505" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="526" parent="505" name="updated_at">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-    </column>
-    <foreign-key id="527" parent="505" name="fk_rails_6a92d07dab">
+    <foreign-key id="525" parent="505" name="fk_rails_6a92d07dab">
       <ColNames>exercise_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>exercises</RefTableName>
     </foreign-key>
-    <foreign-key id="528" parent="505" name="fk_rails_ddadabfcbc">
+    <foreign-key id="526" parent="505" name="fk_rails_ddadabfcbc">
       <ColNames>workout_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>workouts</RefTableName>
     </foreign-key>
-    <index id="529" parent="505" name="index_exercise_sets_on_exercise_id">
+    <index id="527" parent="505" name="index_exercise_sets_on_exercise_id">
       <ColNames>exercise_id</ColNames>
     </index>
-    <index id="530" parent="505" name="index_exercise_sets_on_workout_id">
+    <index id="528" parent="505" name="index_exercise_sets_on_workout_id">
       <ColNames>workout_id</ColNames>
     </index>
-    <key id="531" parent="505">
+    <key id="529" parent="505">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="532" parent="506" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="530" parent="506" name="id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="533" parent="506" name="name">
+    <column id="531" parent="506" name="name">
       <DasType>varchar|0s</DasType>
+      <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
     </column>
-    <column id="534" parent="506" name="created_at">
+    <column id="532" parent="506" name="created_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="535" parent="506" name="updated_at">
+    <column id="533" parent="506" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <key id="536" parent="506">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="537" parent="507" name="version">
-      <DasType>varchar|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <index id="538" parent="507" name="sqlite_autoindex_schema_migrations_1">
-      <ColNames>version</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="539" parent="507">
-      <ColNames>version</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_schema_migrations_1</UnderlyingIndexName>
-    </key>
-    <column id="540" parent="508" name="type">
-      <DasType>TEXT|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="541" parent="508" name="name">
-      <DasType>TEXT|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="542" parent="508" name="tbl_name">
-      <DasType>TEXT|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="543" parent="508" name="rootpage">
-      <DasType>INT|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="544" parent="508" name="sql">
-      <DasType>TEXT|0s</DasType>
+    <column id="534" parent="506" name="user_id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>NULL</DefaultExpression>
       <Position>5</Position>
     </column>
-    <column id="545" parent="509" name="name">
-      <Position>1</Position>
-    </column>
-    <column id="546" parent="509" name="seq">
-      <Position>2</Position>
-    </column>
-    <column id="547" parent="510" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="548" parent="510" name="user_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="549" parent="510" name="workout_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="550" parent="510" name="created_at">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="551" parent="510" name="updated_at">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="552" parent="510" name="fk_rails_de44bb68d8">
+    <foreign-key id="535" parent="506" name="fk_rails_f4f6893528">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="553" parent="510" name="fk_rails_99c3ce76e4">
-      <ColNames>workout_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>workouts</RefTableName>
-    </foreign-key>
-    <index id="554" parent="510" name="index_user_workouts_on_user_id">
+    <index id="536" parent="506" name="index_exercises_on_user_id">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="555" parent="510" name="index_user_workouts_on_workout_id">
-      <ColNames>workout_id</ColNames>
-    </index>
-    <key id="556" parent="510">
+    <key id="537" parent="506">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="557" parent="511" name="id">
+    <column id="538" parent="507" name="version">
+      <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <index id="539" parent="507" name="sqlite_autoindex_schema_migrations_1">
+      <ColNames>version</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="540" parent="507">
+      <ColNames>version</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_schema_migrations_1</UnderlyingIndexName>
+    </key>
+    <column id="541" parent="508" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="542" parent="508" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="543" parent="508" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="544" parent="508" name="rootpage">
+      <DasType>INT|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="545" parent="508" name="sql">
+      <DasType>TEXT|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="546" parent="509" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="547" parent="509" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="548" parent="510" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="558" parent="511" name="name">
-      <DasType>varchar|0s</DasType>
+    <column id="549" parent="510" name="created_at">
+      <DasType>datetime(6)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="559" parent="511" name="email">
-      <DasType>varchar|0s</DasType>
+    <column id="550" parent="510" name="updated_at">
+      <DasType>datetime(6)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="560" parent="511" name="password_digest">
+    <column id="551" parent="510" name="email">
       <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="561" parent="511" name="created_at">
-      <DasType>datetime(6)|0s</DasType>
+    <column id="552" parent="510" name="encrypted_password">
+      <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="562" parent="511" name="updated_at">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="553" parent="510" name="confirmation_token">
+      <DasType>varchar(128)|0s</DasType>
       <Position>6</Position>
     </column>
-    <key id="563" parent="511">
+    <column id="554" parent="510" name="remember_token">
+      <DasType>varchar(128)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <index id="555" parent="510" name="index_users_on_confirmation_token">
+      <ColNames>confirmation_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="556" parent="510" name="index_users_on_remember_token">
+      <ColNames>remember_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="557" parent="510" name="index_users_on_email">
+      <ColNames>email</ColNames>
+    </index>
+    <key id="558" parent="510">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="564" parent="512" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="559" parent="511" name="id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="565" parent="512" name="created_at">
+    <column id="560" parent="511" name="created_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="566" parent="512" name="updated_at">
+    <column id="561" parent="511" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="567" parent="512">
+    <column id="562" parent="511" name="user_id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>NULL</DefaultExpression>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="563" parent="511" name="fk_rails_40b8fd8af6">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="564" parent="511" name="index_workouts_on_user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="565" parent="511">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

@@ -1,13 +1,14 @@
 class ExercisesController < ApplicationController
-  before_action :set_exercise, only: %i[ show edit update destroy ]
+  before_action :require_login
 
   # GET /exercises or /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where(user_id: current_user.id)
   end
 
   # GET /exercises/1 or /exercises/1.json
   def show
+    @exercise = Exercise.find(params[:id])
     @exercise_sets = ExerciseSet.where(exercise_id: @exercise.id)
     workouts_id = @exercise_sets.map(&:workout_id)
     workout_id_min = workouts_id.min
@@ -83,6 +84,6 @@ class ExercisesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exercise_params
-      params.require(:exercise).permit(:name)
+      params.require(:exercise).permit(:name, :user_id)
     end
 end

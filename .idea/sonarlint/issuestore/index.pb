@@ -8,8 +8,6 @@ j
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-R
-"app/views/exercises/index.html.erb,0\3\031d569a1b838ad0b9e7eac864a770c8fa86a6c1
 O
 app/views/home/_header.html.erb,b\3\b3e3fd4e0affb49f7f2b15dfe19e163f2ceddd36
 >

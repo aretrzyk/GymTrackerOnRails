@@ -1,58 +1,61 @@
 <p style="color: green"><%= notice %></p>
-<div class="container">
-  <%= form_with(model: [@workout, ExerciseSet.new]) do |form| %>
-    <!-- Form fields go here -->
+<% if @workout.user_id != current_user.id %>
+  <p style="color: red">You are not authorized to view this workout</p>
+<% else %>
+  <div class="container">
+    <%= form_with(model: [@workout, ExerciseSet.new]) do |form| %>
 
-    <%= form.label :exercise_id %>
-    <%= form.collection_select :exercise_id, Exercise.all, :id, :name, prompt: 'Select Exercise' %>
+      <%= form.label :exercise_id %>
+      <%= form.collection_select :exercise_id, Exercise.all, :id, :name, prompt: 'Select Exercise' %>
 
-    <%= form.hidden_field :workout_id, value: @workout.id %>
+      <%= form.hidden_field :workout_id, value: @workout.id %>
 
-    <%= form.label :reps %>
-    <%= form.number_field :reps %>
+      <%= form.label :reps %>
+      <%= form.number_field :reps %>
 
-    <%= form.label :weight %>
-    <%= form.number_field :weight %>
+      <%= form.label :weight %>
+      <%= form.number_field :weight %>
 
-    <!-- Submit button -->
-    <%= form.submit "Create Exercise Set" %>
-  <% end %>
+      <%= form.submit "Create Exercise Set" %>
+    <% end %>
 
 
-  <h2>Exercise Sets</h2>
-  <% @exercise_sets.includes(:exercise).group_by(&:exercise).each do |exercise, exercise_sets| %>
-  <div class="card card-body">
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= exercise.id %>" aria-expanded="false" aria-controls="exerciseSetsCollapse">
-      <%= exercise.name %>
-    </button>
-    <div class="card-body collapse show" id="collapse<%= exercise.id %>">
-      <table class="table table-bordered">
-        <thead class="thead-light">
-        <tr>
-          <th>Reps</th>
-          <th>Weight</th>
-          <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% exercise_sets.each do |set| %>
-          <tr>
-            <td><%= set.reps %></td>
-            <td><%= set.weight %></td>
-            <td>
-              <%= button_to "Destroy", workout_exercise_set_path(@workout, set), method: :delete %>
-            </td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+    <h2>Exercise Sets</h2>
+    <% @exercise_sets.includes(:exercise).group_by(&:exercise).each do |exercise, exercise_sets| %>
+      <div class="card card-body">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= exercise.id %>" aria-expanded="false" aria-controls="exerciseSetsCollapse">
+          <%= exercise.name %>
+        </button>
+        <div class="card-body collapse show" id="collapse<%= exercise.id %>">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+            <tr>
+              <th>Reps</th>
+              <th>Weight</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% exercise_sets.each do |set| %>
+              <tr>
+                <td><%= set.reps %></td>
+                <td><%= set.weight %></td>
+                <td>
+                  <%= button_to "Destroy", workout_exercise_set_path(@workout, set), method: :delete %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 
 
-<div>
-  <%= link_to "Back to workouts", workouts_path %>
-  <%= button_to "Destroy this workout", @workout, method: :delete %>
-</div>
+  <div>
+    <%= link_to "Back to workouts", workouts_path %>
+    <%= button_to "Destroy this workout", @workout, method: :delete %>
+  </div>
+<% end %>
+
