@@ -54,6 +54,7 @@ class WorkoutsController < ApplicationController
 
   # DELETE /workouts/1 or /workouts/1.json
   def destroy
+    @workout = Workout.find(params[:id])
     @workout.destroy
 
     respond_to do |format|

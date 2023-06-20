@@ -11,16 +11,15 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     @exercise_sets = ExerciseSet.where(exercise_id: @exercise.id)
     workouts_id = @exercise_sets.map(&:workout_id)
-    workout_id_min = workouts_id.min
-    workout_id_max = workouts_id.max
     @reps = []
     @weight = []
     @avg_volume = []
     @total_volume = []
-    unless workout_id_min.nil? || workout_id_max.nil?
-      (workout_id_min..workout_id_max).each { |i|
+    unless workouts_id.nil?
+      workouts_id.each { |i|
         @workout = Workout.find(i)
         @workout_sets = @exercise_sets.where(workout_id: i)
+        puts (@workout_sets.average(:reps)).round(1)
         @reps.append([@workout.created_at, (@workout_sets.average(:reps)).round(1)])
         @weight.append([@workout.created_at, (@workout_sets.average(:weight)).round(1)])
         @avg_volume.append([@workout.created_at, (@workout_sets.map { |x| x.reps * x.weight }.sum / @workout_sets.count).round])

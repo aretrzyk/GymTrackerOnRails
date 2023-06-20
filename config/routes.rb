@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   resources :users
   resources :workouts
 
-  get 'home/about'
-  root "home#index"
+  root "workouts#index"
 end

@@ -8,7 +8,5 @@ j
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-O
-app/views/home/_header.html.erb,b\3\b3e3fd4e0affb49f7f2b15dfe19e163f2ceddd36
 >
 config/boot.rb,2\8\282801721e4662b894f31333db756b2db291eee9
