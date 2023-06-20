@@ -1,10 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<% if @exercise.user_id != current_user.id %>
+  <p style="color: red">You are not authorized to view this exercise</p>
+<% else %>
+  <div class="text-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <p>
+        <strong>Name:</strong>
+        <%= @exercise.name %>
+      </p>
+      <%= link_to "Back to exercises", exercises_path, class: "btn btn-secondary mx-3" %>
+      <%= button_to "Destroy this exercise", @exercise, method: :delete, class: "btn btn-danger mx-3" %>
+    </div>
 
-<%= render @exercise %>
+    <% if @exercise_sets != nil %>
+    <%= line_chart @reps, label: "Average Reps", title: "Average Reps"%>
+    <%= line_chart @weight, label: "Average Weight", title: "Average Weight" %>
+    <%= line_chart @avg_volume, label: "Average Volume", title: "Average Volume" %>
+    <%= line_chart @total_volume, label: "Total Volume", title: "Total Volume" %>
+    <% end %>
 
-<div>
-  <%= link_to "Edit this exercise", edit_exercise_path(@exercise) %> |
-  <%= link_to "Back to exercises", exercises_path %>
 
-  <%= button_to "Destroy this exercise", @exercise, method: :delete %>
-</div>
+  </div>
+<% end %>

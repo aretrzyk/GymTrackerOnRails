@@ -1,13 +1,31 @@
 class ExercisesController < ApplicationController
-  before_action :set_exercise, only: %i[ show edit update destroy ]
+  before_action :require_login
 
   # GET /exercises or /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where(user_id: current_user.id)
   end
 
   # GET /exercises/1 or /exercises/1.json
   def show
+    @exercise = Exercise.find(params[:id])
+    @exercise_sets = ExerciseSet.where(exercise_id: @exercise.id)
+    workouts_id = @exercise_sets.map(&:workout_id)
+    @reps = []
+    @weight = []
+    @avg_volume = []
+    @total_volume = []
+    unless workouts_id.nil?
+      workouts_id.each { |i|
+        @workout = Workout.find(i)
+        @workout_sets = @exercise_sets.where(workout_id: i)
+        puts (@workout_sets.average(:reps)).round(1)
+        @reps.append([@workout.created_at, (@workout_sets.average(:reps)).round(1)])
+        @weight.append([@workout.created_at, (@workout_sets.average(:weight)).round(1)])
+        @avg_volume.append([@workout.created_at, (@workout_sets.map { |x| x.reps * x.weight }.sum / @workout_sets.count).round])
+        @total_volume.append([@workout.created_at, @workout_sets.map { |x| x.reps * x.weight }.sum])
+      }
+    end
   end
 
   # GET /exercises/new
@@ -25,7 +43,7 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully created." }
+        format.html { redirect_to exercises_url, notice: "Exercise was successfully created." }
         format.json { render :show, status: :created, location: @exercise }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +83,6 @@ class ExercisesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exercise_params
-      params.require(:exercise).permit(:name)
+      params.require(:exercise).permit(:name, :user_id)
     end
 end
