@@ -80,3 +80,5 @@ gem "jsbundling-rails", "~> 1.1"
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 5.3.0.alpha3'
+
+gem "clearance", "~> 2.6"

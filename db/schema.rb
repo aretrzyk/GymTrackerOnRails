@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_17_170711) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_20_194331) do
   create_table "exercise_sets", force: :cascade do |t|
     t.integer "exercise_id", null: false
     t.integer "workout_id", null: false
@@ -28,21 +28,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_170711) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_workouts", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "workout_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_workouts_on_user_id"
-    t.index ["workout_id"], name: "index_user_workouts_on_workout_id"
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", limit: 128, null: false
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128, null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -52,6 +47,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_170711) do
 
   add_foreign_key "exercise_sets", "exercises"
   add_foreign_key "exercise_sets", "workouts"
-  add_foreign_key "user_workouts", "users"
-  add_foreign_key "user_workouts", "workouts"
 end
