@@ -6,3 +6,29 @@ W
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 >
 config/boot.rb,2\8\282801721e4662b894f31333db756b2db291eee9
+T
+$app/views/workouts/_workout.html.erb,8\f\8fa2469b6ac65f8b1486d6ff52d9c33f3f8282fd
+R
+"app/views/exercises/index.html.erb,0\3\031d569a1b838ad0b9e7eac864a770c8fa86a6c1
+Y
+)app/views/workouts/_workout.json.jbuilder,e\f\efbaa52596a67bacaf97884c48fcdb7546265afc
+P
+ app/views/workouts/show.html.erb,d\c\dcc8cc97cbd99bdfba8606bdbb2b4a956f6f34e5
+O
+app/views/home/_header.html.erb,b\3\b3e3fd4e0affb49f7f2b15dfe19e163f2ceddd36
+Q
+!app/views/exercises/show.html.erb,d\a\dabd1a0176d9f6459970e6765001b9b49a523b66
+V
+&app/controllers/workouts_controller.rb,e\5\e501b271eaa37900f1bb9689d164d184a781bf81
+V
+&app/views/layouts/application.html.erb,e\8\e82294e631b91cb53fe2e362dfd3b8e4a3924ae2
+Q
+!app/views/workouts/index.html.erb,b\9\b9b64d85e302f4dd2294519d670498dd43e39751
+Y
+)db/migrate/20230620194331_create_users.rb,4\1\41f758f78e58cb1d9cead6b7308a450204fe651b
+a
+1db/migrate/20230620200221_add_user_to_workouts.rb,d\8\d875e48c2865354666d7aca9e6f5b816bf698f7c
+b
+2db/migrate/20230620200542_add_user_to_exercises.rb,6\1\6164c84463620bbea2b57bc9f5674eeb2b415df7
+j
+:.idea/dataSources/7b743299-f05d-4cee-8308-a8a171d6b083.xml,f\3\f327058c9e7a8991fdb0ec9c8178f85ca9bb8489
