@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="Basic Authorization">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3e3fd4e0affb49f7f2b15dfe19e163f2ceddd36" beforeDir="false" />
+    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="Visual overhaul and minor fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8afdb16096a1c5ea384a55d30d0e15257790b4cc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/3/b3e3fd4e0affb49f7f2b15dfe19e163f2ceddd36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8afdb16096a1c5ea384a55d30d0e15257790b4cc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/workouts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/workouts_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/exercises/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/exercises/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/exercises/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/exercises/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/workouts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/workouts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/workouts/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/workouts/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/passwords/create.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/passwords/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/passwords/new.html.erb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +231,7 @@
       <workItem from="1687018300788" duration="448000" />
       <workItem from="1687018780950" duration="33000" />
       <workItem from="1687018841765" duration="4018000" />
-      <workItem from="1687275168958" duration="20775000" />
+      <workItem from="1687275168958" duration="24734000" />
     </task>
     <task id="LOCAL-00001" summary="Ruby version update">
       <created>1687019613132</created>
@@ -285,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687295655740</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Visual overhaul and minor fixes">
+      <created>1687301201720</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687301201720</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +325,7 @@
     <MESSAGE value="Adding exercises to workouts and exercise progress charts" />
     <MESSAGE value="Basic log in" />
     <MESSAGE value="Basic Authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Authorization" />
+    <MESSAGE value="Visual overhaul and minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visual overhaul and minor fixes" />
   </component>
 </project>

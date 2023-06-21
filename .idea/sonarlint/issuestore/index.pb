@@ -1,6 +1,4 @@
 
-M
-app/views/home/about.html.erb,8\a\8afdb16096a1c5ea384a55d30d0e15257790b4cc
 W
 'app/views/exercises/index.json.jbuilder,f\9\f909b195fcdf5a4743bb7c30ba8defd0e792d937
 j
