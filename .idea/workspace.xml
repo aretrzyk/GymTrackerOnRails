@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="Visual overhaul and minor fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8afdb16096a1c5ea384a55d30d0e15257790b4cc" beforeDir="false" />
+    <list default="true" id="dac84f57-5f32-4833-a23c-65fffa0a6ac6" name="Changes" comment="Chartkick fix">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/50b04119-323f-4765-9a5a-5fe27fa27ff1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7b743299-f05d-4cee-8308-a8a171d6b083.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7b743299-f05d-4cee-8308-a8a171d6b083.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d36cb4ee-a89a-415b-84c6-8ac14904ed6d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f2938ded-9794-428f-8745-bbc0bbde0e77.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c91b96da28d44b0eef42ab623e7c31123be1d55" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8afdb16096a1c5ea384a55d30d0e15257790b4cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/c/1c91b96da28d44b0eef42ab623e7c31123be1d55" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/exercises/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/exercises/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/passwords/create.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/passwords/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/passwords/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/config/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/config/manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20230413071322_create_exercises.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +233,8 @@
       <workItem from="1687018300788" duration="448000" />
       <workItem from="1687018780950" duration="33000" />
       <workItem from="1687018841765" duration="4018000" />
-      <workItem from="1687275168958" duration="24734000" />
+      <workItem from="1687275168958" duration="25132000" />
+      <workItem from="1687310077817" duration="1110000" />
     </task>
     <task id="LOCAL-00001" summary="Ruby version update">
       <created>1687019613132</created>
@@ -289,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687301201720</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Chartkick fix">
+      <created>1687309345750</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687309345750</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +316,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/dev" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -326,6 +336,7 @@
     <MESSAGE value="Basic log in" />
     <MESSAGE value="Basic Authorization" />
     <MESSAGE value="Visual overhaul and minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visual overhaul and minor fixes" />
+    <MESSAGE value="Chartkick fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chartkick fix" />
   </component>
 </project>

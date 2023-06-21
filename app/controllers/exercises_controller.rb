@@ -67,6 +67,7 @@ class ExercisesController < ApplicationController
 
   # DELETE /exercises/1 or /exercises/1.json
   def destroy
+    @exercise = Exercise.find(params[:id])
     @exercise.destroy
 
     respond_to do |format|
